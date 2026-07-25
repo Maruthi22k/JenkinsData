@@ -1,9 +1,19 @@
 pipeline {
     agent any  
+
+environment {
+        // Define environment variables here
+        APP_NAME = 'MyApp'
+        DEPLOY_ENV = 'production'
+        COURCE = " Jenkins"
+
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'                
+                sh """
+                echo "environment cource:" ${COURCE}
+                echo 'Building...'
+                
             }
         }
 
