@@ -10,7 +10,7 @@ pipeline {
     options{
         timeout(time: 1, unit: 'MINUTES')
     }
-    
+
     parameters {
         string(name: 'APP_NAME', defaultValue: 'MyApp', description: 'Application name')
         choice(name: 'DEPLOY_ENV', choices: ['development', 'staging', 'production'], description: 'Deployment environment')
@@ -35,14 +35,12 @@ pipeline {
                 echo 'Running tests...'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo "Deploying to ${DEPLOY_ENV}..."
             }
         }
     }
-
     post {
         success {
             echo 'Pipeline completed successfully!'
