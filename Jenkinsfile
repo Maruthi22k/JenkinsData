@@ -1,5 +1,5 @@
 pipeline {
-    
+
     agent any
 
     environment {
@@ -10,11 +10,13 @@ pipeline {
     options{
         timeout(time: 1, unit: 'MINUTES')
     }
+    
     parameters {
         string(name: 'APP_NAME', defaultValue: 'MyApp', description: 'Application name')
         choice(name: 'DEPLOY_ENV', choices: ['development', 'staging', 'production'], description: 'Deployment environment')
         string(name: 'COURCE', defaultValue: 'Jenkins', description: 'Environment source')
     }
+
 
     stages {
         stage('Build') {
