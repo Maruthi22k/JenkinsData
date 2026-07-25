@@ -19,6 +19,8 @@ pipeline {
                     echo "Application: ${APP_NAME}"
                     echo "Deployment environment: ${DEPLOY_ENV}"
                     echo "Building..."
+
+                    sleep 10
                 """
             }
         }
