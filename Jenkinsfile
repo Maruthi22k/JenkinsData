@@ -6,6 +6,10 @@ pipeline {
         DEPLOY_ENV = 'production'
         COURCE     = 'Jenkins'
     }
+    options{
+       # buildDiscarder(logRotator(numToKeepStr: '5'))
+        timeout(time: 10, unit: 'minutes')
+    }
 
     stages {
 
