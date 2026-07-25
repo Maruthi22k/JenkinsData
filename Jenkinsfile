@@ -1,4 +1,5 @@
 pipeline {
+    
     agent any
 
     environment {
@@ -24,7 +25,6 @@ pipeline {
                     echo "Deployment environment: ${DEPLOY_ENV}"
                    
                     sleep 10
-
                 """
             }
         }
