@@ -25,8 +25,14 @@ pipeline {
                     echo "Application: ${APP_NAME}"
                     echo "Deployment environment: ${DEPLOY_ENV}"
                     echo "Building..."
-
+                    
                     sleep 10
+                    env
+
+                    echo "Build completed for ${APP_NAME} in 
+                    echo "Deploy name: ${DEPLOY_ENV} environment."
+                    echo "Source: ${COURCE}"
+                    echo "
                 """
             }
         }
