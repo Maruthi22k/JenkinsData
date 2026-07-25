@@ -1,33 +1,35 @@
 pipeline {
-    agent any  
+    agent any
 
-environment {
-        // Define environment variables here
-        APP_NAME = 'MyApp'
+    environment {
+        APP_NAME   = 'MyApp'
         DEPLOY_ENV = 'production'
-        COURCE = " Jenkins"
+        COURCE     = 'Jenkins'
+    }
 
     stages {
+
         stage('Build') {
             steps {
                 sh """
-                echo "environment cource:" ${COURCE}
-                echo 'Building...'
-                
+                    echo "Environment source: ${COURCE}"
+                    echo "Application: ${APP_NAME}"
+                    echo "Deployment environment: ${DEPLOY_ENV}"
+                    echo "Building..."
+                """
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'               
+                echo 'Running tests...'
             }
         }
 
         stage('Deploy') {
-           
             steps {
-                echo "Deploying to ..."
-             }
+                echo "Deploying to ${DEPLOY_ENV}..."
+            }
         }
     }
 
@@ -35,11 +37,13 @@ environment {
         success {
             echo 'Pipeline completed successfully!'
         }
+
         failure {
             echo 'Pipeline failed!'
         }
+
         always {
-            cleanWs() // Clean workspace after run
+            cleanWs()
         }
     }
 }
