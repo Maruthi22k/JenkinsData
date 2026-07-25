@@ -7,7 +7,6 @@ pipeline {
         COURCE     = 'Jenkins'
     }
     options{
-       # buildDiscarder(logRotator(numToKeepStr: '5'))
         timeout(time: 10, unit: 'minutes')
     }
 
