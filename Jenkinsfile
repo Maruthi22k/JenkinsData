@@ -15,9 +15,7 @@ pipeline {
         string(name: 'COURCE', defaultValue: 'Jenkins', description: 'Environment source')
     }
 
-
     stages {
-
         stage('Build') {
             steps {
                 sh """
@@ -30,7 +28,6 @@ pipeline {
                 """
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Running tests...'
