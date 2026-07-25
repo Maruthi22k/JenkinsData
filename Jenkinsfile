@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
            
             steps {
-                echo "Deploying to ${APP_ENV}..."
+                echo "Deploying to ..."
              }
         }
     }
